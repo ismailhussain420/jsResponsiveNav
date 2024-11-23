@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Nav</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+    .navbar{
+        background-color: blueviolet;
+        text-align: center;
+        padding:24px
+    }
+    .navbar i{
+        
+        display: none;
+        color:#fff;
+        font-size: 27px;
+       
+    }
+    .container a{
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 12px;
+    margin-left: 28px;
+    }
+
+    @media only screen and (max-width: 800px) {
+
+ 
+        .navbar i{
+        
+        display: block;
+        color:#fff;
+        font-size: 27px;
+        position: relative;
+        left:-43%
+       
+    }
+    .container a{
+        display: flex;
+        flex-direction: column;
+        margin-right:30px;
+        padding:10px;
+        display: none;
+
+
+    }
+    .container a:hover{
+        background-color: brown;
+        padding:10px
+    }
+    .open a{
+        display: flex;
+        flex-direction: column;
+        margin-right:30px;
+        padding:10px;
+        display: open;
+    }
+
+
+
+}
+</style>
+</head>
+<body>
+    <div class="navbar">
+        
+        <i class="fas fa-bars" id="toggleBtn" ></i>
+        <div class="container" id="container">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Service</a>
+            <a href="">Contact</a>
+
+        </div>
+    </div>
+    <script>
+        var toggleBtn = document.getElementById("toggleBtn");
+        var container = document.getElementById("container");;
+        toggleBtn.addEventListener("click",function(){
+            container.classList.toggle("open");
+
+        })
+
+
+    </script>
+</body>
+</html>
